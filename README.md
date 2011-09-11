@@ -51,5 +51,7 @@ holiday:
 ```
 
 Holidays are scoped by country code. Each holiday needs both "when" and "as" keys. The "when" key can either be an exact
-month and day, or the occurrance of the holiday by month. E.g., "1st monday in september".
+month and day, or the occurrence of the holiday in the given month. E.g., "1st monday in september".
 
+The "as" key is used to identify holidays by alternate names and spellings. For instance, "thanksgiving" and "turkey day" should both
+point to the 4th thursday in november.

@@ -18,7 +18,7 @@ module Holiday
       date = if parts.kind_of?(Hash)
         d = Date.parse("#{parts[:month]} 1 #{year}")
         weeks = (d.beginning_of_month..d.end_of_month).group_by{|d| d.wday}
-        weeks[parts[:wday]][parts[:occurrance]-1]
+        weeks[parts[:wday]][parts[:occurrence]-1]
       else
         Date.parse([parts, year].join(" "))
       end

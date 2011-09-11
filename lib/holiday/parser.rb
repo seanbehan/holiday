@@ -4,10 +4,10 @@ module Holiday
     class << self
       def parse(string)
         if string =~ /in/
-          w,m,o = weekday(string), month(string), occurrance(string)
+          w,m,o = weekday(string), month(string), occurrence(string)
           d = wday(w)
           
-          { :weekday => w, :wday => d, :month => m, :occurrance => o }          
+          { :weekday => w, :wday => d, :month => m, :occurrence => o }          
         else
           string
         end
@@ -21,7 +21,7 @@ module Holiday
         (string.split(' ').map(&:downcase) & months).join
       end
 
-      def occurrance(string)
+      def occurrence(string)
         string.scan(/\d/).join.to_i
       end
 

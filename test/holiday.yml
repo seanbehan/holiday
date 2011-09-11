@@ -1,5 +1,5 @@
 holiday:
-  united_states:
+  US:
     christmas:
       when: december 25th
       as: christmas
@@ -12,7 +12,7 @@ holiday:
     thanksgiving:
       when: 4th thursday in november
       as: thanksgiving, turkey day
-  canada:
+  CA:
     christmas:
       when: december 25th
       as: christmas, noël

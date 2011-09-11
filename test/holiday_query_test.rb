@@ -3,7 +3,7 @@ require 'helper.rb'
 class HolidayTest < Test::Unit::TestCase
   def setup
     Holiday.yaml_file = "#{File.dirname(__FILE__)}/holiday.yml"
-    Holiday.country = "united_states"
+    Holiday.country = "US"
   end
 
   def test_query

@@ -1,0 +1,14 @@
+holiday:
+  united_states:
+    christmas:
+      when: december 25th
+      as: christmas
+    halloween:
+      when: october 31st
+      as: halloween, all hallows eve
+    labor_day:
+      when: 1st monday in september
+      as: labor day, labour day
+    thanksgiving:
+      when: 4th thursday in november
+      as: thanksgiving, turkey day

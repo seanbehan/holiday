@@ -12,3 +12,7 @@ holiday:
     thanksgiving:
       when: 4th thursday in november
       as: thanksgiving, turkey day
+  canada:
+    christmas:
+      when: december 25th
+      as: christmas, noël

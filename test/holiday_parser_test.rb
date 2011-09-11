@@ -8,7 +8,7 @@ class HolidayTest < Test::Unit::TestCase
 
   def test_parser_parse
     assert_kind_of Hash, Holiday::Parser.parse("1st monday in june")
-    parts = {:weekday => "thursday", :occurrance => 2, :month => "october"}
+    parts = {:weekday => "thursday", :occurrance => 2, :month => "october", :wday=>4}
     assert_equal parts,  Holiday::Parser.parse("2nd thursday in october"), Holiday::Parser.parse('2nd thursday in october')
     assert_equal "december 25th", Holiday::Parser.parse("december 25th")
   end

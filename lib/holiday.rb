@@ -11,23 +11,28 @@ module Holiday
 
     def find(holiday,year=nil)
       year = year || Time.now.year
+      holiday = holiday.to_s
       occurrs = Query.find(holiday)
       parts   = Parser.parse(occurrs)
 
-      timestamp = if parts.kind_of?(Hash)
-        occurrance(parts)
+      date = if parts.kind_of?(Hash)
+        d = Date.parse("#{parts[:month]} 1 #{year}")
+        weeks = (d.beginning_of_month..d.end_of_month).group_by{|d| d.wday}
+        weeks[parts[:wday]][parts[:occurrance]-1]
       else
-        Date.parse([])
+        Date.parse([parts, year].join(" "))
       end
     end
 
-    # def occurrance(data)
-    #   date = Date.parse("#{data[:month]} 1 #{data[:year]}")
-    #   collection = (date.beginning_of_month...date.end_of_month).group_by{ |d| d.wday }
-    #   collection[day_to_int(data[:weekday])][data[:occurrance]-1]
-    # end
+    # Returns all holidays
+    def all
+      Builder.build.keys
+    end
 
-    # Return keys in yaml file
+    def yaml
+      YAML.load_file(yaml_file)["holiday"]
+    end
+
     def holidays
       yaml[country].keys
     end
@@ -36,8 +41,5 @@ module Holiday
       yaml[country]
     end
 
-    def yaml
-      YAML.load_file(yaml_file)["holiday"]
-    end
   end
 end

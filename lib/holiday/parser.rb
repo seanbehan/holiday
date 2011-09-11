@@ -1,11 +1,13 @@
-module Holiday
-  
+module Holiday  
   # Extracts the relevant information from strings
   class Parser
     class << self
       def parse(string)
         if string =~ /in/
-          {:weekday => weekday(string), :month => month(string), :occurrance => occurrance(string) }
+          w,m,o = weekday(string), month(string), occurrance(string)
+          d = wday(w)
+          
+          { :weekday => w, :wday => d, :month => m, :occurrance => o }          
         else
           string
         end
@@ -36,5 +38,4 @@ module Holiday
       end
     end
   end
-
 end

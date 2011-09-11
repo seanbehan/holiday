@@ -3,8 +3,8 @@ module Holiday
   class Query
     class << self
       def find(holiday)
-        holiday_key = Builder.build[holiday]
-        Holiday.country_holidays[holiday_key]["when"] # => 1st monday in september
+        key = Builder.build[holiday]
+        Holiday.country_holidays[key]["when"] # => 1st monday in september
       end
     end
   end

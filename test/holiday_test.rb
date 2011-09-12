@@ -19,7 +19,7 @@ class HolidayTest < Test::Unit::TestCase
     assert Holiday.holidays.include?("christmas"), Holiday.holidays.join(" ")
     assert Holiday.holidays.include?("labor_day"), Holiday.holidays.join(" ")
 
-    Holiday.country = "canada"
+    Holiday.country = "CA"
     assert Holiday.holidays.include?("christmas")
     assert !Holiday.holidays.include?("labor_day")
   end

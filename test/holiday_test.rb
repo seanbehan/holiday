@@ -10,24 +10,24 @@ class HolidayTest < Test::Unit::TestCase
     assert "holiday.yml", Holiday.yaml_file
     assert "US", Holiday.country
   end
-
+  
   def test_yaml_file_loaded
     assert_kind_of Hash, Holiday.yaml
   end
-
+  
   def test_country_holidays
     assert Holiday.holidays.include?("christmas"), Holiday.holidays.join(" ")
     assert Holiday.holidays.include?("labor_day"), Holiday.holidays.join(" ")
-
+  
     Holiday.country = "CA"
     assert_equal "CA", Holiday.country
     assert Holiday.holidays.include?("christmas")
     assert !Holiday.holidays.include?("labor_day")
   end
-
+  
   def test_holiday_find
     assert_kind_of Date, Holiday.find(:christmas, 2005)
-
+  
     # by keys and by alternate names
     assert_equal "2005-12-25", Holiday.find(:christmas, 2005).to_s # symbol
     assert_equal "2005-12-25", Holiday.find("christmas", 2005).to_s # or string

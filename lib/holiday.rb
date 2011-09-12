@@ -8,9 +8,10 @@ require "#{File.dirname(__FILE__)}/holiday/query"
 module Holiday
   class << self
     attr_accessor :yaml_file, :country
-
+    
     def find(holiday,year=nil)
       year = year || Time.now.year
+      
       holiday = holiday.to_s
       occurrs = Query.find(holiday)
       parts   = Parser.parse(occurrs)
@@ -23,19 +24,14 @@ module Holiday
         Date.parse([parts, year].join(" "))
       end
     end
-    
-    # TODO add method missing to allow for methods like...
-    # Holiday.christmas_2005
-    # Holiday.thanksgiving(1999)
-    # Holiday.third_thursday_in_march(2005)
 
     # Returns all holidays
     def all
-      Builder.build.keys
+      @all ||= Builder.build.keys
     end
-
+    
     def yaml
-      YAML.load_file(yaml_file)["holiday"]
+      @yaml ||= YAML.load_file(yaml_file)["holiday"]
     end
 
     def holidays
@@ -45,6 +41,10 @@ module Holiday
     def country_holidays
       yaml[country]
     end
-
+    
+    # TODO add method missing to allow for methods like...
+    # Holiday.christmas_2005
+    # Holiday.thanksgiving(1999)
+    # Holiday.third_thursday_in_march(2005)
   end
 end

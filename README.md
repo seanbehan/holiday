@@ -33,21 +33,6 @@ Holiday.find(:thanksgiving, 1999)
 
 ```
 
-## Configuration
-
-There is a default YAML file bundled with this gem. However, the list of holidays and countries is not complete. You
-can point to your own file
-
-```ruby
-Holiday.yaml_file = "/path/to/your/file/holiday.yml"
-```
-
-You can set the country, with country code, as well
-
-```ruby
-Holiday.country = "US"
-```
-
 ## YAML
 
 The YAML format for Holiday is as follows

@@ -4,7 +4,7 @@ Holiday is a gem that lets you configure holidays for any country with YAML.
 
 ## Default Usage
 
-Setup path to yaml file and country
+First setup path to a YAML file and set the country code.
 
 ```ruby
 
@@ -13,11 +13,17 @@ Holiday.country = "US"
 
 ```
 
+You can query for dates
 ```ruby
 
 # Defaults to current year
 Holiday.find("christmas")
 Holiday.find("labour day")
+
+```
+
+Or supply a year
+```ruby
 
 # Can supply the year as optional argument
 Holiday.find(:christmas, 2005)
@@ -40,7 +46,9 @@ You can set the country, with country code, as well
 Holiday.country = "US"
 ```
 
-The YAML format is as follows
+## YAML
+
+The YAML format for Holiday is as follows
 
 ```yaml
 holiday:
@@ -66,6 +74,20 @@ The "as" key is used to identify holidays by alternate names and spellings. For 
 point to the 4th thursday in november.
 
 ```ruby
+
 Holiday.find("turkey day")
 Holiday.find(:thanksgiving)
+
+```
+
+## Other methods
+
+There are a few other methods that may be useful
+
+```ruby
+
+Holiday.all # array containing all keys and alternate names of holidays from yaml file
+Holiday.scan("a string containing a holiday by name, like christmas") # => christmas
+Holiday::Query.find("all hallows eve") # => october 31st
+
 ```

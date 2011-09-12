@@ -55,3 +55,8 @@ month and day, or the occurrence of the holiday in the given month. E.g., "1st m
 
 The "as" key is used to identify holidays by alternate names and spellings. For instance, "thanksgiving" and "turkey day" should both
 point to the 4th thursday in november.
+
+```ruby
+Holiday.find("turkey day")
+Holiday.find(:thanksgiving)
+```

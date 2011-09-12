@@ -23,7 +23,7 @@ module Holiday
         Date.parse([parts, year].join(" "))
       end
     end
-
+    
     # TODO add method missing to allow for methods like...
     # Holiday.christmas_2005
     # Holiday.thanksgiving(1999)

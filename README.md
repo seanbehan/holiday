@@ -5,6 +5,9 @@ Holiday is a gem that lets you configure holidays for any country with YAML.
 ## Default Usage
 
 ```ruby
+# Set yaml file location and country code first
+Holiday.yaml_file = "#{File.dirname(__FILE__)}/holiday.yml"
+Holiday.country = "US"
 
 # Defaults to current year
 Holiday.find("christmas")

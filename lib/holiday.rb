@@ -27,7 +27,16 @@ module Holiday
 
     # Returns all holidays
     def all
-      @all ||= Builder.build.keys
+      Builder.build.keys
+    end
+
+    # holiday = Holiday.all.map { |h| string.scan(h) }.uniq.flatten # return match
+    def scan(string)
+      all.map{ |h| string.scan(h) }.uniq.flatten.join
+    end
+    
+    def include?(holiday)
+      all.keys.include?(holiday)
     end
     
     def yaml

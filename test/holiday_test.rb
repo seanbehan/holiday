@@ -25,6 +25,12 @@ class HolidayTest < Test::Unit::TestCase
     assert !Holiday.holidays.include?("labor_day")
   end
   
+  def test_scan_string
+    assert_equal "labour day", Holiday.scan("labour day 2009"), Holiday.scan("hello labour day world")
+    assert_equal "turkey day", Holiday.scan("turkey day 2007"), Holiday.scan("turkey day 2007")    
+    assert_equal false, Holiday.scan("octoberfest 1990").present?, Holiday.scan("octoberfest 1990")        
+  end
+  
   def test_holiday_find
     assert_kind_of Date, Holiday.find(:christmas, 2005)
   

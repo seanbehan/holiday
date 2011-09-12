@@ -24,6 +24,7 @@ Holiday.find("labour day")
 ```
 
 Or supply a year
+
 ```ruby
 
 # Can supply the year as optional argument

@@ -14,6 +14,7 @@ Holiday.country = "US"
 ```
 
 You can query for dates
+
 ```ruby
 
 # Defaults to current year

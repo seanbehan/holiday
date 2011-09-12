@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Holiday::VERSION
   s.authors     = ["Sean Behan"]
   s.email       = ["bseanvt@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/bseanvt/holiday"
   s.summary     = %q{Holiday is a gem that lets you configure holidays for any country using a simple YAML file format.}
   s.description = %q{Holiday is a gem that lets you configure holidays for any country using a simple YAML file format.}
 

@@ -8,7 +8,7 @@ class HolidayTest < Test::Unit::TestCase
 
   def test_config
     assert "holiday.yml", Holiday.yaml_file
-    assert "united_states", Holiday.country
+    assert "US", Holiday.country
   end
 
   def test_yaml_file_loaded
@@ -20,6 +20,7 @@ class HolidayTest < Test::Unit::TestCase
     assert Holiday.holidays.include?("labor_day"), Holiday.holidays.join(" ")
 
     Holiday.country = "CA"
+    assert_equal "CA", Holiday.country
     assert Holiday.holidays.include?("christmas")
     assert !Holiday.holidays.include?("labor_day")
   end

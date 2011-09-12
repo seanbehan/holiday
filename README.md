@@ -1,6 +1,6 @@
 # Holiday
 
-Holiday is a gem that lets you configure holidays for any country with YAML.
+Holiday is a gem that lets you configure holidays for multiple countries with YAML.
 
 ## Default Usage
 
